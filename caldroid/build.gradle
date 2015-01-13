@@ -2,10 +2,9 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 21
-    buildToolsVersion "21.1"
+    buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "com.caldroid"
         minSdkVersion 8
         targetSdkVersion 21
     }
@@ -19,7 +18,7 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:21.+'
+    compile 'com.android.support:support-v4:21.0.3'
     compile 'com.darwinsys:hirondelle-date4j:1.5.1'
 }
 

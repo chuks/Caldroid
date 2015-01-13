@@ -39,7 +39,7 @@ public class WeekdayArrayAdapter extends ArrayAdapter<String> {
     public View getView(int position, View convertView, ViewGroup parent) {
         // To customize text size and color
         LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        TextView textView = (TextView) inflater.inflate(R.layout.weekday_textview, null);
+        TextView textView = (TextView) inflater.inflate(R.layout.weekday_textview, parent, false);
 
         // Set content
         String item = getItem(position);

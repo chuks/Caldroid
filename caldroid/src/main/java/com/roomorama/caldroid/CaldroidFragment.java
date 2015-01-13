@@ -20,7 +20,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.Button;
-import android.widget.GridView;
+import com.kekwanu.expandedgridview.ExpandedGridView;
 import android.widget.TextView;
 
 import com.antonyt.infiniteviewpager.InfinitePagerAdapter;
@@ -124,7 +124,7 @@ public class CaldroidFragment extends DialogFragment {
     private Button leftArrowButton;
     private Button rightArrowButton;
     private TextView monthTitleTextView;
-    private GridView weekdayGridView;
+    private ExpandedGridView weekdayGridView;
     private InfiniteViewPager dateViewPager;
     private DatePageChangeListener pageChangeListener;
     private ArrayList<DateGridFragment> fragments;
@@ -261,7 +261,7 @@ public class CaldroidFragment extends DialogFragment {
      *
      * @return
      */
-    public GridView getWeekdayGridView() {
+    public ExpandedGridView getWeekdayGridView() {
         return weekdayGridView;
     }
 
@@ -1160,9 +1160,10 @@ public class CaldroidFragment extends DialogFragment {
         setShowNavigationArrows(showNavigationArrows);
 
         // For the weekday gridview ("SUN, MON, TUE, WED, THU, FRI, SAT")
-        weekdayGridView = (GridView) view.findViewById(R.id.weekday_gridview);
+        weekdayGridView = (ExpandedGridView) view.findViewById(R.id.weekday_gridview);
         WeekdayArrayAdapter weekdaysAdapter = getNewWeekdayAdapter();
         weekdayGridView.setAdapter(weekdaysAdapter);
+        weekdayGridView.setExpanded(true);
 
         // Setup all the pages of date grid views. These pages are recycled
         setupDateGridPages(view);

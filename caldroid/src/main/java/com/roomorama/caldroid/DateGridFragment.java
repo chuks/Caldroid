@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
-import android.widget.GridView;
+import com.kekwanu.expandedgridview.ExpandedGridView;
 
 import com.caldroid.R;
 
@@ -21,7 +21,7 @@ import com.caldroid.R;
  * @author thomasdao
  */
 public class DateGridFragment extends Fragment {
-    private GridView gridView;
+    private ExpandedGridView gridView;
     private CaldroidGridAdapter gridAdapter;
     private OnItemClickListener onItemClickListener;
     private OnItemLongClickListener onItemLongClickListener;
@@ -51,7 +51,7 @@ public class DateGridFragment extends Fragment {
         this.gridAdapter = gridAdapter;
     }
 
-    public GridView getGridView() {
+    public ExpandedGridView getGridView() {
         return gridView;
     }
 
@@ -65,6 +65,7 @@ public class DateGridFragment extends Fragment {
         // fragment life cycles
         if (gridAdapter != null) {
             gridView.setAdapter(gridAdapter);
+            gridView.setExpanded(true);
         }
 
         if (onItemClickListener != null) {
@@ -84,7 +85,7 @@ public class DateGridFragment extends Fragment {
         }
 
         if (gridView == null) {
-            gridView = (GridView) inflater.inflate(gridViewRes, container, false);
+            gridView = (ExpandedGridView) inflater.inflate(gridViewRes, container, false);
             setupGridView();
         } else {
             ViewGroup parent = (ViewGroup) gridView.getParent();

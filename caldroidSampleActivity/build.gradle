@@ -1,8 +1,8 @@
-apply plugin: 'android'
+apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 21
-    buildToolsVersion "21.1"
+    buildToolsVersion "21.1.2"
 
     defaultConfig {
         applicationId "com.caldroidsample"
@@ -20,5 +20,5 @@ android {
 
 dependencies {
     compile project(':caldroid')
-    compile 'com.android.support:support-v4:21.+'
+    compile 'com.android.support:support-v4:21.0.3'
 }
